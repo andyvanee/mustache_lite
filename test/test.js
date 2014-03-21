@@ -64,32 +64,14 @@ describe('Template', function(){
   // Assume that developers are writing templates. Templates are code.
   // They only need the bare minimum sanitization and error checking
 
-  it('throws an error on mismatched braces', function(){
+  it('handles mismatched braces', function(){
     var data = {x: 'example'}
     ,   error
     ;
-    try { $.render('{{x}', data) } catch (e) { error = e }
-    assert.equal(error.name, 'SyntaxError');
-    error = null;
-
-    try { $.render(' }} example {{ ') } catch (e) { error = e; }
-    assert.equal(error.name, 'SyntaxError');
-  });
-
-  it('misbehaves if the template looks weird', function(){
-    var template1 = 'hello {{x}}}'
-    ,   template2 = 'hello {{{x}}'
-    ,   data = {x: 'example'}
-    ,   error;
-
-    assert.equal($.render(template1, data), 'hello example}');
-
-    try {
-      $.render(template2, data);
-    } catch (e) {
-      error = e;
-    }
-    assert.equal(error.name, 'SyntaxError');
+    assert.equal($.render('{{x}', data), '{{x}');
+    assert.equal($.render(' }} example {{ ', data), ' }} example {{ ');
+    assert.equal($.render('hello {{x}}}', data), 'hello example}');
+    assert.equal($.render('hello {{{x}}', data), 'hello {example');
   });
 
   it('passes through nearby braces', function(){
