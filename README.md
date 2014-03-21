@@ -11,3 +11,5 @@ Handlebars#precompiled x 112,767 ops/sec ¬±0.71% (88 runs sampled)
 MustacheLite           x 96,037 ops/sec ¬±0.81% (96 runs sampled)
 Handlebars             x 1,828 ops/sec ¬±1.08% (92 runs sampled)
 ```
+
+- note: Handlebars and Resig are not escaping unsafe html, so they should be compared to the no-escape version of MustacheLite
