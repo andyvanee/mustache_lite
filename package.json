@@ -12,11 +12,11 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "make test"
+    "test": "make"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/moot/riotjs.git"
+    "url": "git@github.com:Andyvanee/mustache_lite.git"
   },
   "author": "Andy VanEe",
   "license": "MIT",
