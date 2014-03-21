@@ -1,0 +1,26 @@
+{
+  "name": "mustache_lite",
+  "version": "0.0.1",
+  "description": "A small templating library. A hybrid between mustache and riot.js",
+  "keywords": [
+    "library",
+    "templating"
+  ],
+  "main": "lib/mustache_lite.js",
+  "directories": {
+    "test": "test",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/moot/riotjs.git"
+  },
+  "author": "Andy VanEe",
+  "license": "MIT",
+  "devDependencies": {
+    "benchmark": "^1.0.0"
+  }
+}
